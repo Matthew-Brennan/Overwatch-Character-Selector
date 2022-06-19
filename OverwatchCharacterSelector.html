@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+background: rgb(50,0,103);
+background: linear-gradient(90deg, rgba(50,0,103,1) 0%, rgba(93,0,167,1) 100%);
+color: #8d00ff;
+	
+	text-align: center;
+	font-size: 60px;
+	margin-top: 0px;
+
+	}
+
+.button {
+  background-color: #821ad6;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color: #7200cd;
+}
+</style>
+</head>
+<body>
+
+<p id="tank">Tank, Tank</p>
+<p id="dps">DPS, DPS</p>
+<p id="support">Support, Support</p>
+
+<script>
+function generateTeam()
+{
+
+var tankHeroes = ["D'Va", "Orisa", "Rein", "Roadhog", "Sigma", "Winston", "Wrecking Ball", "Zarya"]
+var dpsHeroes = ["Ashe", "Bastion", "Doomfist", "Echo", "Genji", "Hanzo", "Junkrat", "McCree", "Mei", "Pharah", "Reaper", "Soldier: 76", "Sombra", "Symmetra", "Torbjörn", "Tracer", "Widowmaker"]
+var supportHeroes = ["Ana", "Baptiste", "Brigitte","Lúcio","Mercy","Moira", "Zenyatta"]
+
+var tank = []
+var dps = []
+var support = []
+
+for (var j = 0; j < 2; j++)
+{
+	
+    tank.push(" " + tankHeroes.splice(Math.floor(Math.random() * tankHeroes.length),1))
+    dps.push(" " + dpsHeroes.splice(Math.floor(Math.random() * dpsHeroes.length),1))
+    support.push(" " + supportHeroes.splice(Math.floor(Math.random() * supportHeroes.length),1))
+}
+
+document.getElementById("tank").innerHTML = tank
+document.getElementById("dps").innerHTML = dps
+document.getElementById("support").innerHTML = support
+
+}
+
+</script>
+<button class="button" onclick="generateTeam()">Generate Team</button>
+</body>
+</html>
